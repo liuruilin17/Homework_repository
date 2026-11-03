@@ -1,0 +1,13 @@
+# C/C++ build outputs
+*.exe
+*.o
+*.obj
+*.out
+*.pdb
+*.ilk
+
+# Local and temporary files
+.env
+.env.*
+~$*
+*.tmp
