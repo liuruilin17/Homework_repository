@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每日数学分析练习 · 题目档案</title>
+<meta name="description" content="工科数学分析1 每日练习题库，按日期归档，支持检索、完成记录和错题笔记。">
+<style>
+:root{font-family:Inter,"SF Pro Display","PingFang SC","Microsoft YaHei",sans-serif;color:#1c2638;background:#f7f8fb;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}
+a{color:inherit}.app{max-width:1450px;margin:auto;display:grid;grid-template-columns:258px minmax(0,1fr);min-height:100vh}
+aside{background:#fff;border-right:1px solid #e8eaf2;padding:30px 18px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.brand{display:flex;align-items:center;gap:11px;padding:5px 9px 35px}.mark{display:grid;place-items:center;background:#1c2c55;color:#fff;width:38px;height:38px;border-radius:11px;font-family:Georgia,serif;font-size:18px;font-style:italic}.brand b{font-size:15px;letter-spacing:-.3px}.brand small{display:block;color:#929bab;font-size:11px;margin-top:3px}
+.nav-label{margin:20px 12px 8px;color:#9098a9;text-transform:uppercase;letter-spacing:1.1px;font-size:10px;font-weight:700}
+.navbtn{width:100%;border:0;background:transparent;text-align:left;padding:12px;border-radius:11px;color:#5a6578;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;margin:2px 0}
+.navbtn:hover,.navbtn.active{background:#edf1ff;color:#243ca7}.navbtn.active{font-weight:700}
+.navcount{color:#8b97ad;font-size:11px}.navbtn.active .navcount{color:#4767bb}
+.side-note{margin:26px 10px 0;border-top:1px solid #ecedf1;padding-top:22px;color:#9aa3b2;font-size:11px;line-height:1.7}
+main{min-width:0;padding:39px max(28px,5.5%) 100px}
+.eyebrow{color:#5365a5;text-transform:uppercase;font-size:11px;letter-spacing:1.8px;font-weight:800;margin-bottom:14px}
+h1{font-size:clamp(26px,3.3vw,39px);letter-spacing:-1.5px;line-height:1.25;margin:0 0 10px;color:#202c40}
+.subtitle{color:#8892a5;font-size:13px;margin:0 0 26px;line-height:1.8}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:0 0 27px}
+.stat{background:white;border:1px solid #eaecf3;border-radius:15px;padding:19px 21px}
+.stat strong{display:block;font-size:26px;letter-spacing:-.7px;color:#202f51}.stat span{display:block;color:#919bad;font-size:11px;margin-top:6px}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0 27px}.search{flex:1;min-width:200px;position:relative}
+.search input,.toolbar select,.toolbar button{height:42px;border:1px solid #e5e7ef;border-radius:11px;background:#fff;color:#44516b;padding:0 15px;font-size:12px;outline:0}.search input{width:100%;padding-left:38px}.search:before{content:"⌕";font-size:24px;position:absolute;left:12px;top:5px;color:#9ba6b9}.search input:focus{border-color:#96a9fa}
+.toolbar button:hover{border-color:#bac7f1}
+.dateheading{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:23px 0 14px}
+.dateheading h2{margin:0;color:#273248;font-size:19px;letter-spacing:-.5px}.dateheading span{color:#98a1b0;font-size:12px}
+.date-desc{color:#8994a7;font-size:12px;margin:0 0 14px;line-height:1.6}
+.progress{height:5px;background:#e8eafa;border-radius:5px;overflow:hidden;margin:15px 0 20px}.progress div{height:100%;background:#7a8de9;transition:width .2s}
+.problem{background:#fff;border:1px solid #e8eaf1;border-radius:17px;padding:25px 28px;margin:12px 0 16px;box-shadow:0 4px 22px #121e3a06}
+.problem.done{border-color:#d5e7d6}.phead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.ptitle{display:flex;gap:10px;align-items:center;min-width:0;flex-wrap:wrap}
+.num{background:#f1f3ff;color:#6d80c4;border-radius:8px;padding:5px 8px;font-size:11px;font-weight:800}
+.ptitle h3{margin:0;font-size:15px;font-weight:700;color:#29354b}
+.meta{display:flex;gap:8px;align-items:center;white-space:nowrap;color:#a1a9b6;font-size:11px}
+.difficulty{font-size:10px;border-radius:30px;padding:5px 10px;background:#edf7ef;color:#50946a}.difficulty.medium{background:#f2f3fb;color:#6372b6}.difficulty.hard{background:#fff3e7;color:#a87337}
+.body{margin-top:18px;color:#38465b;font-size:14px;line-height:1.85;overflow-x:auto}.body p{margin:8px 0}.body mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:5px 0}
+.warning{background:#fff9ed;border-left:3px solid #e6aa51;padding:10px 12px;border-radius:4px;margin:15px 0;font-size:12px;color:#9a693a}
+.pfooter{margin-top:20px;padding-top:16px;border-top:1px solid #f0f1f4;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.check{display:flex;align-items:center;gap:9px;color:#59657a;font-size:12px;user-select:none;cursor:pointer}
+.check input{appearance:none;width:18px;height:18px;border:1.6px solid #b5bfd3;border-radius:5px;margin:0;display:grid;place-content:center}
+.check input:checked{background:#7189dd;border-color:#7189dd}.check input:checked:after{content:"✓";font-weight:800;font-size:12px;color:#fff}
+.notebtn{border:0;background:transparent;color:#6173b7;font-size:12px;padding:5px 0}
+.notearea{display:none;margin-top:15px;width:100%;min-height:95px;padding:12px 15px;line-height:1.7;border:1px solid #e0e4f1;border-radius:10px;background:#fafbff;outline:0;resize:vertical;font-size:12px;color:#394960}.notearea.visible{display:block}
+.empty{text-align:center;background:#fff;border:1px dashed #d5dbea;border-radius:16px;padding:50px 20px;color:#9aa5b4;font-size:13px}
+.foot{margin-top:32px;padding-top:18px;border-top:1px solid #e6e8f1;color:#9aa3b4;font-size:11px;line-height:1.8}
+.err{background:#fff4ef;color:#9b583c;border:1px solid #f4d9c9;border-radius:14px;padding:22px;line-height:1.8}
+.mobile-dates{display:none}
+@media(max-width:920px){.app{display:block}aside{display:none}main{padding:25px 18px 70px}.mobile-dates{display:flex;gap:8px;overflow-x:auto;padding:2px 0 13px;margin:0 0 15px}.mobile-dates button{flex:0 0 auto;border:1px solid #e3e7f1;border-radius:24px;background:#fff;padding:10px 14px;color:#71809a;font-size:12px}.mobile-dates button.active{background:#273e86;color:white;border-color:#273e86}.problem{padding:19px 16px}.stat{padding:15px}.stat strong{font-size:22px}}
+@media(max-width:520px){.stats{gap:7px}.stat{padding:12px}.stat strong{font-size:20px}.stat span{font-size:10px}.meta{gap:5px}.ptitle h3{font-size:14px}.body{font-size:13px}.dateheading h2{font-size:17px}}
+@media print{aside,.mobile-dates,.toolbar,.pfooter,.foot{display:none!important}.app{display:block}main{padding:0}.problem{box-shadow:none;break-inside:avoid}.dateheading{break-after:avoid}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="app">
+<aside><div class="brand"><div class="mark">∫</div><div><b>每日数学分析</b><small>Practice Archive</small></div></div><div class="nav-label">题目导航</div><div id="side-nav"></div><div class="side-note">题目按实际推送日期保存。完成状态与笔记只保存在当前浏览器。新日期会从题库数据更新。</div></aside>
+<main><div class="eyebrow">MATHEMATICAL ANALYSIS · 01</div><h1>每日练习 · 题目档案</h1><p class="subtitle">按日期回顾每一天的练习。先独立作答，再把过程发到聊天里批改。</p>
+<div class="stats"><div class="stat"><strong id="stat-days">—</strong><span>练习日期</span></div><div class="stat"><strong id="stat-total">—</strong><span>题目总数</span></div><div class="stat"><strong id="stat-done">—</strong><span>已完成题目</span></div></div>
+<div class="mobile-dates" id="mobile-dates"></div>
+<div class="toolbar"><div class="search"><input id="search" type="search" placeholder="搜索题目、知识点……" aria-label="搜索题目"></div><select id="filter-level" aria-label="难度筛选"><option value="">所有难度</option><option>基础</option><option>中等</option><option>提高</option></select><select id="filter-status" aria-label="完成筛选"><option value="">全部状态</option><option value="todo">未完成</option><option value="done">已完成</option></select><button id="print">打印</button></div>
+<div id="content"><div class="empty">正在读取题库…</div></div>
+<p class="foot">题目内容按历史推送归档，部分原题如存在条件缺失会标记提示。本站不提前公开解答。未来新题需要先被加入题库数据后才会出现在这里。</p>
+</main></div>
+<script>
+(function(){
+'use strict';
+var DATA=null, selected='latest', done={}, notes={};
+try{done=JSON.parse(localStorage.getItem('ma_done_1')||'{}')||{};notes=JSON.parse(localStorage.getItem('ma_notes_1')||'{}')||{};}catch(e){}
+function $(id){return document.getElementById(id)}
+function save(){try{localStorage.setItem('ma_done_1',JSON.stringify(done));localStorage.setItem('ma_notes_1',JSON.stringify(notes))}catch(e){}}
+function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function dateText(s){var p=s.split('-');return Number(p[1])+'月'+Number(p[2])+'日'}
+function days(){return (DATA&&DATA.days||[]).slice().sort(function(a,b){return b.date.localeCompare(a.date)})}
+function pick(d){selected=d;render()}
+function nav(){
+var arr=days(), options=[{date:'all',label:'全部日期',count:arr.reduce(function(n,d){return n+d.items.length},0)}].concat(arr.map(function(d){return {date:d.date,label:dateText(d.date),count:d.items.length}}));
+var active=selected==='latest'?(arr[0]&&arr[0].date):selected;
+$('side-nav').innerHTML=options.map(function(o){return '<button class="navbtn '+(o.date===active?'active':'')+'" data-date="'+o.date+'"><span>'+(o.date==='all'?'▦ &nbsp;':'◦ &nbsp;')+esc(o.label)+'</span><span class="navcount">'+o.count+'</span></button>'}).join('');
+$('mobile-dates').innerHTML=options.map(function(o){return '<button class="'+(o.date===active?'active':'')+'" data-date="'+o.date+'">'+esc(o.label)+'</button>'}).join('');
+document.querySelectorAll('[data-date]').forEach(function(b){b.onclick=function(){pick(b.dataset.date)}})
+}
+function stats(){var arr=days();$('stat-days').textContent=arr.length;$('stat-total').textContent=arr.reduce(function(n,d){return n+d.items.length},0);$('stat-done').textContent=arr.reduce(function(n,d){return n+d.items.filter(function(i){return !!done[i.id]}).length},0)}
+function render(){
+if(!DATA)return;
+nav();stats();
+var arr=days(), q=$('search').value.trim().toLowerCase(), level=$('filter-level').value, status=$('filter-status').value;
+if(selected!=='all'){arr=arr.filter(function(d){return d.date===(selected==='latest'?days()[0].date:selected)})}
+var output='', found=0;
+arr.forEach(function(day){
+var items=day.items.filter(function(item){var raw=(item.title+' '+day.topics+' '+item.html.replace(/<[^>]+>/g,' ')).toLowerCase();return (!q||raw.includes(q))&&(!level||item.level===level)&&(!status||(status==='done'?!!done[item.id]:!done[item.id]))});
+if(!items.length)return;
+found+=items.length;
+var completed=day.items.filter(function(i){return !!done[i.id]}).length;
+output+='<section><div class="dateheading"><h2>'+dateText(day.date)+' <span style="font-size:12px;font-weight:normal;color:#a2aabd">/ '+esc(day.date)+'</span></h2><span>'+completed+' / '+day.items.length+' 已完成</span></div><p class="date-desc">'+esc(day.topics)+'</p><div class="progress"><div style="width:'+(100*completed/day.items.length)+'%"></div></div>';
+items.forEach(function(item){
+var c=item.level==='基础'?'':(item.level==='中等'?'medium':'hard');
+output+='<article class="problem '+(done[item.id]?'done':'')+'"><div class="phead"><div class="ptitle"><span class="num">'+String(item.number).padStart(2,'0')+'</span><h3>'+esc(item.title)+'</h3></div><div class="meta"><span class="difficulty '+c+'">'+esc(item.level)+'</span><span>'+item.minutes+' 分钟</span></div></div><div class="body">'+item.html+'</div>'+(item.note?'<div class="warning">⚠ 历史题目提示：'+esc(item.note)+'</div>':'')+'<div class="pfooter"><label class="check"><input type="checkbox" data-check="'+esc(item.id)+'" '+(done[item.id]?'checked':'')+'> 标记为已完成</label><button class="notebtn" data-note-open="'+esc(item.id)+'">'+(notes[item.id]?'查看 / 修改笔记':'+ 记录笔记')+'</button></div><textarea class="notearea" data-note="'+esc(item.id)+'" placeholder="记录想法、易错点或需要复习的内容……">'+esc(notes[item.id]||'')+'</textarea></article>';
+});
+output+='</section>';
+});
+$('content').innerHTML=found?output:'<div class="empty">当前日期或筛选条件下没有题目。</div>';
+document.querySelectorAll('[data-check]').forEach(function(input){input.onchange=function(){done[input.dataset.check]=input.checked;save();render()}});
+document.querySelectorAll('[data-note-open]').forEach(function(btn){btn.onclick=function(){var a=document.querySelector('[data-note="'+btn.dataset.noteOpen+'"]');a.classList.toggle('visible');if(a.classList.contains('visible'))a.focus()}});
+document.querySelectorAll('textarea[data-note]').forEach(function(el){el.oninput=function(){notes[el.dataset.note]=el.value;save()}});
+if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetPromise().catch(function(){})}
+}
+['search','filter-level','filter-status'].forEach(function(id){$(id).addEventListener(id==='search'?'input':'change',render)});
+$('print').onclick=function(){window.print()};
+var github='https://raw.githubusercontent.com/liuruilin17/Homework_repository/main/math-analysis-daily/questions.json';
+async function load(){
+var sources=['questions.json',github+'?v='+Math.floor(Date.now()/60000)];
+for(var i=0;i<sources.length;i++){try{var r=await fetch(sources[i],{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);var data=await r.json();if(!data.days||!Array.isArray(data.days))throw new Error('bad data');DATA=data;render();return}catch(e){}}
+$('content').innerHTML='<div class="err">题库读取失败。请确认已联网，或者将 <b>index.html</b> 与 <b>questions.json</b> 放在同一个文件夹后，通过本地静态服务器访问。</div>';
+}
+load();
+})();
+</script>
+</body></html>
